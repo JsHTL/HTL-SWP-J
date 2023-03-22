@@ -1,8 +1,11 @@
 let randomNumber1 = Math.random() * 100 + 1;
 let random1 = Math.floor(randomNumber1);
 
+
 let randomNumber2 = Math.random() * 100 + 1;
 let random2 = Math.floor(randomNumber2);
+
+console.log("r1:" + random1);
 
 if (random1<random2 && random1<50){
     console.log("Zahl 1 ist kleiner als Zahl 2 und Mini.");
