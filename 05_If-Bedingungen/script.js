@@ -1,13 +1,13 @@
 let number = 17;
 
-if (number<20){
+if (number<=7){
     alert("Mini");
 }
 
-if (number>20 && number<50){
+if (number>7 && number<=90){
     alert("Medium");
 }
 
-if (number>50){
+if (number>90){
     alert("Large");
 }
