@@ -1,8 +1,6 @@
 let randomNumber1 = Math.floor(Math.random() * 6) + 5;
 let random1 = Math.floor(randomNumber1);
 
-console.log(random1);
-
 if (random1==1) {
     console.log("one");
 }
