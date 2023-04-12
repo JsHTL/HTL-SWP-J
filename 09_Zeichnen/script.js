@@ -25,9 +25,9 @@ console.log(b);
 
 for (let index3 = 1; index3 < 2; index3 ++) {
     console.log("XXXXXX");
-    console.log("X    X");
+    console.log("     X");
     console.log("     X");
     console.log("X    X");
     console.log("X    X");
-    console.log("XXXXXX")
+    console.log(" XXXXX")
 }
