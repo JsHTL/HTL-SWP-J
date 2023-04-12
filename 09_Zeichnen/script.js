@@ -11,14 +11,23 @@ for (let index = 1; index < 3; index ++) {
     }
 }
 
-for (let index = 1; index < 101; index ++) {
-    if(index%1==0){
-        a = a + index;
+for (let index2 = 1; index2 < 101; index2 ++) {
+    if(index2%1==0){
+        a = a + index2;
     }
-    if(index%2==0){
-        b = b + index;
+    if(index2%2==0){
+        b = b + index2;
     }
 }
 
 console.log(a);
 console.log(b);
+
+for (let index3 = 1; index3 < 2; index3 ++) {
+    console.log("XXXXXX");
+    console.log("X    X");
+    console.log("     X");
+    console.log("X    X");
+    console.log("X    X");
+    console.log("XXXXXX")
+}
