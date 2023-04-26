@@ -25,3 +25,8 @@ function average(Array) {
 
 var d = average(Array);
 console.log(d);
+
+let c = ["Susi", " Paula", " Hans"];
+
+console.log("Meine Freunde sind " + c + "!");
+c.push(" Sepp");
