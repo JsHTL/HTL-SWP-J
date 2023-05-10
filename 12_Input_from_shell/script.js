@@ -7,13 +7,16 @@ const readline = createInterface({
 
 const readLineAsync = () => {
     return new Promise ((resolve) => {
-        readlinne.question("", (userRes) => {
+        readline.question("", (userRes) => {
             resolve(userRes);
-            readline.close();
-        })
-    })
+            
+        });
+    });
 };
 
 console.log("Enter your name");
 let inputOfUser = await readLineAsync();
+console.log("Your name is " + inputOfUser);
+
+ inputOfUser = await readLineAsync();
 console.log("Your name is " + inputOfUser);
