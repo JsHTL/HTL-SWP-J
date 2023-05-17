@@ -14,8 +14,8 @@ const readLineAsync = () => {
     });
 };
 
-let selection = true;
-let balance = "0";
+let isGameRunning = true;
+let balance = 0;
 
 
 console.log("Mit den folgenden Zahlen wählen Sie Ihre Aktionen aus.");
@@ -24,34 +24,30 @@ console.log("   2    Abheben");
 console.log("   3    Kontostand");
 console.log("   4    Logout");
 
-
-while(selection){
-    let selction = await readLineAsync();
-    if (selction === 1){
+while(isGameRunning){
+    let selectionOfUser = await readLineAsync();
+    console.log("x" + selectionOfUser + " type:" + typeof(selectionOfUser));
+    if (selectionOfUser == 1){
         console.log("Bitte geben Sie den einzuzahlenden Betrag ein.");
         let payment = await readLineAsync();
-        balance = balance + payment;
+        balance = balance + parseFloat(payment);
         console.log("Ihr neuer Kontostand beträgt " + balance + " Euro.")
     }
 
-    if (selction === 2){
+    if (selectionOfUser == 2){
         console.log("Bitte geben Sie den abzuhebenden Betrag ein.");
         let payout = await readLineAsync();
-        balance = balance - payout;
+        balance = balance - parseFloat(payout);
         console.log("Ihr neuer Kontostand beträgt " + balance + " Euro.")
     }
 
-    if (selction === 3){
+    if (selectionOfUser == 3){
         console.log("Ihr aktueller Kontostand beträgt " + balance + " Euro.");
     }
 
-    if (selction === 4){
+    if (selectionOfUser == 4){
         console.log("Cashmaschine logged out.");
-        selection=false;
-    }
-
-    if (selction =! 1 && selection =! 2 && selection =! 3 && selection =! 4){
-        console.log("Bitte geben Sie eine gültige Aktion ein(1(Einzahlung), 2(Auszahlung), 3(Kontostand), 4(Ausloggen))!");
+        isGameRunning=false;
     }
 }
 
