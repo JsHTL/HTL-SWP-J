@@ -15,7 +15,7 @@ const readLineAsync = () => {
 };
 
 let selection = true;
-let balance = "1";
+let balance = "0";
 
 
 console.log("Mit den folgenden Zahlen wählen Sie Ihre Aktionen aus.");
@@ -50,7 +50,7 @@ while(selection){
         selection=false;
     }
 
-    if (selction != 1 && selection != 2 && selection != 3 && selection != 4){
+    if (selction =! 1 && selection =! 2 && selection =! 3 && selection =! 4){
         console.log("Bitte geben Sie eine gültige Aktion ein(1(Einzahlung), 2(Auszahlung), 3(Kontostand), 4(Ausloggen))!");
     }
 }
