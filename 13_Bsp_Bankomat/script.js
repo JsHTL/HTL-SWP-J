@@ -9,7 +9,6 @@ const readLineAsync = () => {
     return new Promise ((resolve) => {
         readline.question("", (userRes) => {
             resolve(userRes);
-            
         });
     });
 };
