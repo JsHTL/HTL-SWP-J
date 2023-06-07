@@ -59,7 +59,7 @@ var winCombinations = [field[0][0]&&field[0][1]&&field[0][2], field[1][0]&&field
 
 
 function control(){
-    
+    if(selectionOfUser != [0][0] || selectionOfUser != [1][0]  || selectionOfUser != [2][0] || selectionOfUser != [0][1] || selectionOfUser != [1][1] || selectionOfUser != [2][1] || selectionOfUser != [0][2] || selectionOfUser != [1][2] || selectionOfUser != [2][2]);
 }
 
 readline.close();
