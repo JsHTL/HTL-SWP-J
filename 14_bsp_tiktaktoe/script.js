@@ -14,7 +14,7 @@ const readLineAsync = () => {
 };
 
 
-let isTikTakToRunning = true;
+let isTikTakToeRunning = true;
 
 console.log("Please enter in this format: [0]-[2](row) und [0]-[2](colum). As an example in the top mid: [0][1]");
 
@@ -29,7 +29,11 @@ let field = [
 printField();
 control();
 
-while()
+while(isTikTakToeRunning){
+    let selectionOfUser = await readLineAsync();
+    console.log("x" + selectionOfUser + " type:" + typeof(selectionOfUser));
+    selctionOfUser
+}
 
 function printField(){
     for (let row = 0;row < field.length; row++) {
@@ -54,3 +58,5 @@ function printField(){
 function control(){
     
 }
+
+readline.close();
