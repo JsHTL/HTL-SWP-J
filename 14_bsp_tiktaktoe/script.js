@@ -14,6 +14,7 @@ const readLineAsync = () => {
 };
 
 
+let player;
 let isTikTakToeRunning = true;
 
 console.log("Please enter in this format: [0]-[2](row) und [0]-[2](colum). As an example in the top mid: [0][1]");
@@ -33,6 +34,29 @@ while(isTikTakToeRunning){
     let selectionOfUser = await readLineAsync();
     console.log("x" + selectionOfUser + " type:" + typeof(selectionOfUser));
     selctionOfUser
+}
+
+function winner(){
+    for (let row = 0; row < 3; row++) {
+        if (field[row][0] !== 0 && field[row][0] === field[row][1] && field[row][1] === field[row][2]) {
+            return field[row][0];
+        }
+      }
+  
+    for (let col = 0; col < 3; col++) {  
+        if (field[0][col] !== 0 && field[0][col] === field[1][col] && field[1][col] === field[2][col]) {
+            return field[0][col];
+        }
+    }
+    
+    if (board[0][0] !== 0 && board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
+        return board[0][0];
+    }
+
+    if (board[0][2] !== 0 && board[0][2] === board[1][1] && board[1][1] === board[2][0]) {
+        return board[0][2];
+    }
+    return null;
 }
 
 function printField(){
