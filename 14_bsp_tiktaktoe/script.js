@@ -62,32 +62,35 @@ function isThereAWinner() {
     }
   }
 
-  //   for (let col = 0; col < 3; col++) {
-  //     if (
-  //       field[0][col] !== 0 &&
-  //       field[0][col] === field[1][col] &&
-  //       field[1][col] === field[2][col]
-  //     ) {
-  //       return field[0][col];
-  //     }
-  //   }
+    for (let col = 0; col < 3; col++) {
+        if (
+            field[0][col] !== 0 &&
+            field[0][col] === field[1][col] &&
+            field[1][col] === field[2][col]
+        ) {
+        console.log("in true");
+            return true;
+       }
+     }
 
-  //   if (
-  //     board[0][0] !== 0 &&
-  //     board[0][0] === board[1][1] &&
-  //     board[1][1] === board[2][2]
-  //   ) {
-  //     return board[0][0];
-  //   }
+     if (
+       field[0][0] !== 0 &&
+       field[0][0] === field[1][1] &&
+       field[1][1] === field[2][2]
+     ) {
+      console.log("in true");
+      return true;
+     }
 
-  //   if (
-  //     board[0][2] !== 0 &&
-  //     board[0][2] === board[1][1] &&
-  //     board[1][1] === board[2][0]
-  //   ) {
-  //     return board[0][2];
-  //   }
-  //   return null;
+     if (
+       field[0][2] !== 0 &&
+       field[0][2] === field[1][1] &&
+       field[1][1] === field[2][0]
+     ) {
+      console.log("in true");
+      return true;
+     }
+     return null;
   return false;
 }
 
@@ -112,27 +115,12 @@ function printField() {
 }
 
 var winCombinations = [
-  field[0][0] && field[0][1] && field[0][2],
-  field[1][0] && field[1][1] && field[1][2],
-  field[2][0] && field[2][1] && field[2][2],
-  field[0][0] && field[1][1] && field[2][2],
-  field[2][2] && field[1][1] && field[2][0],
-  field[0][0] && field[1][0] && field[2][0],
-  field[0][1] && field[1][1] && field[2][1],
-  field[0][2] && field[1][2] && field[2][2],
+  field[0][0] && field[0][1] && field[0][2], field[1][0] && field[1][1] && field[1][2], field[2][0] && field[2][1] && field[2][2], field[0][0] && field[1][1] && field[2][2], field[2][2] && field[1][1] && field[2][0], field[0][0] && field[1][0] && field[2][0], field[0][1] && field[1][1] && field[2][1], field[0][2] && field[1][2] && field[2][2],
 ];
 
 function control() {
   if (
-    selectionOfUser != [0][0] ||
-    selectionOfUser != [1][0] ||
-    selectionOfUser != [2][0] ||
-    selectionOfUser != [0][1] ||
-    selectionOfUser != [1][1] ||
-    selectionOfUser != [2][1] ||
-    selectionOfUser != [0][2] ||
-    selectionOfUser != [1][2] ||
-    selectionOfUser != [2][2]
+    selectionOfUser != [0][0] || selectionOfUser != [1][0] || selectionOfUser != [2][0] || selectionOfUser != [0][1] || selectionOfUser != [1][1] || selectionOfUser != [2][1] || selectionOfUser != [0][2] || selectionOfUser != [1][2] || selectionOfUser != [2][2]
   );
 }
 
