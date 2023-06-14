@@ -57,7 +57,7 @@ function isThereAWinner() {
       field[row][0] === field[row][1] &&
       field[row][1] === field[row][2]
     ) {
-      console.log("in true");
+      console.log("Gewinner");
       return true;
     }
   }
@@ -68,7 +68,7 @@ function isThereAWinner() {
             field[0][col] === field[1][col] &&
             field[1][col] === field[2][col]
         ) {
-        console.log("in true");
+        console.log("Gewinner");
             return true;
        }
      }
@@ -78,7 +78,7 @@ function isThereAWinner() {
        field[0][0] === field[1][1] &&
        field[1][1] === field[2][2]
      ) {
-      console.log("in true");
+      console.log("Gewinner");
       return true;
      }
 
@@ -87,7 +87,7 @@ function isThereAWinner() {
        field[0][2] === field[1][1] &&
        field[1][1] === field[2][0]
      ) {
-      console.log("in true");
+      console.log("Gewinner");
       return true;
      }
      return null;
@@ -120,7 +120,7 @@ var winCombinations = [
 
 function control() {
   if (
-    selectionOfUser != [0][0] || selectionOfUser != [1][0] || selectionOfUser != [2][0] || selectionOfUser != [0][1] || selectionOfUser != [1][1] || selectionOfUser != [2][1] || selectionOfUser != [0][2] || selectionOfUser != [1][2] || selectionOfUser != [2][2]
+    selectionOfUser != 0-0 || selectionOfUser != 1-0 || selectionOfUser != 2-0 || selectionOfUser != 0-1 || selectionOfUser != 1-1 || selectionOfUser != 2-1 || selectionOfUser != 0-2 || selectionOfUser != 1-2 || selectionOfUser != 2-2
   );
 }
 
