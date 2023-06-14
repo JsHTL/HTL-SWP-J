@@ -13,7 +13,6 @@ const readLineAsync = () => {
     });
 };
 
-
 let player;
 let isTikTakToeRunning = true;
 
@@ -25,15 +24,32 @@ let field = [
     [0,0,0]
 ];
 
-
-
 printField();
 control();
 
 while(isTikTakToeRunning){
     let selectionOfUser = await readLineAsync();
     console.log("x" + selectionOfUser + " type:" + typeof(selectionOfUser));
-    selctionOfUser
+
+}
+
+function printField(){
+    for (let row = 0;row < field.length; row++) {
+        let actualRow = field[row];
+        let output = "";
+        for (let col = 0; col < actualRow.length; col++) {
+            let sign = "";
+            if (actualRow[col]==1){
+                sign = "X";
+            } else if(actualRow[col]==2) {
+                sign="O";
+            } else if(actualRow[col]==0) {
+                sign= " ";
+            }
+            output += sign + " | ";
+        }
+        console.log(output);
+    }
 }
 
 function winner(){
@@ -59,31 +75,55 @@ function winner(){
     return null;
 }
 
-function printField(){
-    for (let row = 0;row < field.length; row++) {
-        let actualRow = field[row];
-        let output = "";
-        for (let col = 0; col < actualRow.length; col++) {
-            let sign = "";
-            if (actualRow[col]==1){
-                sign = "X";
-            } else if(actualRow[col]==2) {
-                sign="O";
-            } else if(actualRow[col]==0) {
-                sign= " ";
-            }
+var winCombinations = [field[0][0]&&field[0][1]&&field[0][2], field[1][0]&&field[1][1]&&field[1][2], field[2][0]&&field[2][1]&&field[2][2], field[0][0]&&field[1][1]&&field[2][2], field[2][2]&&field[1][1]&&field[2][0], field[0][0]&&field[1][0]&&field[2][0], field[0][1]&&field[1][1]&&field[2][1], field[0][2]&&field[1][2]&&field[2][2]];
 
-            output += sign + " | ";
-        }
-        console.log(output);
+function outputWinner(player) {
+    console.log('Spieler ${player} hat gewonnen.');
+    readline.close();
+}
+
+function unentschieden() {
+    console.log("Leider unentschieden.");
+    readline.close();
+}
+
+function control(){
+    if(selectionOfUser != [0][0] || selectionOfUser != [1][0]  || selectionOfUser != [2][0] || selectionOfUser != [0][1] || selectionOfUser != [1][1] || selectionOfUser != [2][1] || selectionOfUser != [0][2] || selectionOfUser != [1][2] || selectionOfUser != [2][2]){
+        console.log("Please enter in the correct format.")
     }
 }
 
-var winCombinations = [field[0][0]&&field[0][1]&&field[0][2], field[1][0]&&field[1][1]&&field[1][2], field[2][0]&&field[2][1]&&field[2][2], field[0][0]&&field[1][1]&&field[2][2], field[2][2]&&field[1][1]&&field[2][0], field[0][0]&&field[1][0]&&field[2][0], field[0][1]&&field[1][1]&&field[2][1], field[0][2]&&field[1][2]&&field[2][2]];
+async function playGame() {
 
+    while (Winner(field) !== 1 && Winner(field) !== 2) {
+      printField();
+      console.log("Spieler", currentPlayer, "Reihe:  ");
+      let input_row = await readLineAsync();
+      console.log("Player", currentPlayer, "Spalte:  ");
+      let input_column = await readLineAsync();
 
-function control(){
-    if(selectionOfUser != [0][0] || selectionOfUser != [1][0]  || selectionOfUser != [2][0] || selectionOfUser != [0][1] || selectionOfUser != [1][1] || selectionOfUser != [2][1] || selectionOfUser != [0][2] || selectionOfUser != [1][2] || selectionOfUser != [2][2]);
-}
+      field[input_row][input_column] = currentPlayer;
+      console.log("");
+
+      if (Winner(field) === 1) {
+        console.log("Spieler 1 ist der Gewinner!");
+        printField();
+        break;
+      }
+      if (Winner(field) === 2) {
+        console.log("Spieler 2 ist der Gewinner!");
+        printField();
+        break;
+      }
+      currentPlayer = currentPlayer === 1 ? 2 : 1
+    }
+
+    if (Winner(field) === null) {
+
+      console.log("Leider Unentschieden!");
+
+      printField();
+
+    }
 
 readline.close();
